@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.43, 1.1, 0.62, 1.08);
+}
+:root{
+    --pink: #ff0066;
+    --home-bg: #c49a9e;
+    --title: #ff0080;
+    --light-white: #ccc;
+    --light-bg: #f5f5f5;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --swiper-navigation-size: 2rem;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+html::-webkit-scrollbar-track {
+    background-color: var(--white);
+
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--pink);
+    
+}
+section {
+    padding: 5rem 10%;
+}
+
+/* Content */
+.content-title{
+    display: inline-block;
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
+    color:var(--title);
+    padding-inline-start: 35px 0;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Ms Madi', cursive;
+    font-size: 40px;
+}
+
+
+/* buttons */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    font-family: 'Arial';
+    border-radius: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+    padding: 1rem 3rem;
+}
+.btn:hover {
+    letter-spacing: 0.3rem;
+}
+
+/* header */
+.header {
+    padding-top: 1em;   
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1000;
+}
+.header .logo {
+    height: 60px;
+    width: 50px;
+}
+.header .logo img {
+    width: 65px;
+}
+.header .nav {
+    list-style: none;
+}
+.header .nav a {
+    font-size: 23px;
+    margin-left: 2rem;
+    color: var(--pink);
+    text-transform: capitalize;
+    font-family: 'Ms Madi', cursive;
+    font-weight: bolder;
+}
+.header .nav .nav__link{
+    position: relative;
+}
+.header .nav .nav__link:hover::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.18rem;
+    left: 0;
+    padding-bottom: 0.10em;
+    top: 2.8rem;
+    background-color: var(--pink);
+}
+.nav_toggle {
+    display: none;
+}
+.active{
+    position: relative;
+}
+.active::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.20rem;
+    left: 0;
+    top: 2.8rem;
+    padding-bottom: 0.10em;
+    background-color: var(--pink);
+}
+
+/* home section */
+.home {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 0 0px;
+}
+.home .slide {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    background-image:url(../images/back1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--home-bg);
+    background-position: center center;
+}
+.home .slide .beautytxt{
+    position: absolute;
+    padding-top: 13em;
+    margin-left: 3em;
+    float: right;
+    text-align: justify;
+}
+.home .slide .beautytxt h1{
+    font-size: 600%;
+    font-weight: bolder;
+    font-family: 'Ms Madi', cursive;
+    color: var(--pink);
+}
+.home .slide .beautytxt p{
+    font-size: 350%;
+    width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+/* About */
+.about{
+    padding: 70px 0;
+    z-index: 0;
+}
+.about .about-section{
+    display: flex;
+    margin-top: 1rem;
+    /* align-items: center; */
+    width: 80%;
+    margin-left: 12rem;
+}
+.about .about-section .about-img {
+    width: 70%;
+}
+.about .about-section .about-img img {
+    width: 80%;
+    border-radius: 2.5rem;
+}
+.about .about-section .about-txt{
+    font-size: 15px;
+    font-style: italic;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 60px;
+}
+
+/* products */
+.content-title1{
+    display: inline-block;
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
+    color:var(--title);
+    padding-inline-start: 35px 0;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Ms Madi', cursive;
+    font-size: 40px;
+}
+.products {
+    padding: 20px 0;
+    background-color: #f6d3d9;
+}
+.ptext{
+    color: var(--pink);
+    text-align: center;
+    font-style: italic;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.products .skincare .headings{
+    color: var(--pink);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 26px;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-family: 'Ms Madi', cursive;
+}
+
+.products .skincare .slide {
+    text-align: center;
+    /* padding: 3rem 0.5rem; */
+    border-radius: 2rem;
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+.products .skincare .swiper-slide-active {
+    transform: scale(0.8);
+    opacity: 1;
+    /* height: 28rem; */
+    background: var(--pink);
+    box-shadow: var(--box-shadow);
+    border: 1px solid thistle;
+    /* margin-bottom: 4rem; */
+    cursor: pointer;
+}    
+.products .skincare .swiper-pagination-bullet, .swiper-pagination-bullet-active{
+    background: var(--pink) !important;
+}
+.products .skincare .slide img {
+    height: 28rem;
+    width: 280px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 2rem;
+}
+
+/* cosmetics */
+.products .cosmetics .headings1{
+    color: black;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 26px;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-family: 'Ms Madi', cursive;
+}
+
+.products .cosmetics .slide {
+    text-align: center;
+    padding: 3rem 0.5rem;
+    padding: 0 0 0 0;
+    --webkit-clip-path: circle(30% at 50% 50%);
+    clip-path: circle(45% at 50% 50%);
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+.products .cosmetics .swiper-slide-active {
+    transform: scale(0.8);
+    opacity: 1;
+    height: 36rem;
+    width: 5rem;
+    background: black;
+    box-shadow: var(--box-shadow);
+    border: 1px solid thistle; 
+    margin-bottom: 4rem;
+    cursor: pointer;
+}    
+.products .cosmetics .swiper-pagination-bullet, .swiper-pagination-bullet-active{
+    background: black !important;
+}
+.products .cosmetics .slide img {
+    height: 28rem;
+    width: 280px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    --webkit-clip-path: circle(30% at 50% 50%);
+    clip-path: circle(45% at 50% 50%);
+}
+
+/* nail polish */
+.products .nailpolish .headings2{
+    color: #ad91a0;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 26px;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-family: 'Ms Madi', cursive;
+}
+
+.products .nailpolish .slide {
+    text-align: center;
+    /* padding: 3rem 0.5rem; */
+    margin-top: 1rem;
+    /* padding: 0 0 0 0; */
+    transform: scale(0.9);
+    opacity: 0.5;
+    --webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+.products .nailpolish .swiper-slide-active {
+    transform: scale(0.8);
+    opacity: 1;
+    /* height: 35rem; */
+    background: #ad91a0;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 4rem;
+    cursor: pointer;
+}    
+.products .nailpolish .swiper-pagination-bullet, .swiper-pagination-bullet-active{
+    background: #ad91a0 !important;
+}
+.products .nailpolish .slide img {
+    height: 28rem;
+    margin-top: 4rem;
+    width: 280px;
+    margin-bottom: 4rem;
+    --webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+/* Services */
+.services{
+    padding: 30px 0;
+    background-color: #fff;
+    justify-self: center;
+}
+.services .services-images{
+    display: grid;
+    margin-top: 3rem;
+    grid-template-columns: repeat(3, 280px);
+    column-gap: 4rem;
+    row-gap: 3rem;
+    margin-left: 3rem;
+    justify-content: center;
+}
+.services .services-images .service-image{
+    /* flex: 1 1 20%; */
+    height: 200px;
+    width: 200px;
+    margin-left: 2rem;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.services .services-images .service-image img {
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+    transition: 1s;
+}
+.services .services-images .service-image img:hover{
+    transform: scale(0.8);
+}
+
+/* Gallery */
+.gallery{
+    padding: 20px 0;
+    background-color: #eed3e6;
+}
+.gallery .btext{
+    color: #ff0080;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Arial";
+    text-transform: capitalize;
+    font-style: italic;
+    margin-top: 0.7rem;
+}
+.gallery .skinfac{
+    margin-top: 6.5rem;
+}
+.gallery .gallery-images{
+    display: grid;
+    margin-top: 3rem;
+    grid-template-columns: repeat(3, 280px);
+    column-gap: 4rem;
+    row-gap: 3rem;
+    margin-left: 3rem;
+    justify-content: center;
+}
+.gallery .gallery-images .gallery-img {
+    flex: 1 1 20%;
+    position: relative;
+    text-align: center;
+}
+.gallery .gallery-images .gallery-img img {
+    border-radius: 2rem;
+}
+.gallery .gallery-images .gallery-img .overlay {
+    width: 92%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 2rem;
+    cursor: pointer;
+    /* background: linear-gradient(rgba(107, 16, 16, 0.13), red); */
+    background-size: fit-content;
+    opacity: 0;
+    margin-left: 0;
+    transition: 1s;
+}
+.gallery .gallery-images .gallery-img:hover .overlay {
+    opacity: 1;
+}
+.gallery .gallery-images .gallery-img .gallery-detail {
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+.gallery .gallery-images .gallery-img .gallery-detail h3{
+    font-size: 20px;
+    color: var(--pink);
+    font-family: 'Arial';
+    font-weight: bolder;
+}
+.gallery .gallery-images .gallery-img:hover .gallery-detail{
+    bottom: 40%;
+    opacity: 1;
+}
+.gallery .gallery-more{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Contact */
+.contact{
+    padding: 30px 0;
+}
+.contact .bt{
+    font-size: 23px;
+    color: var(--pink);
+    text-transform: capitalize;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.contact .opening-row {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.contact .opening-left, .opening-right{
+    flex-basis: 45%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.contact .opening-right {
+    text-align: right;
+}
+.contact .opening-row h2 {
+    margin: 10px;
+    text-transform: capitalize;
+    font-size: 21px;
+    font-weight: bold;
+}
+.contact .opening-row p {
+    line-height: 1.6;
+    font-size: 18px;
+}
+.contact .opening-left .fa,
+.contact .opening-right .fa {
+    font-size: 20px;
+    color: var(--title);
+    margin: 10px;
+}
+.footer-img{
+    max-width: 370px;
+    opacity: 0.4;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contact .social-links {
+    text-align: center;
+}
+.contact .social-links .fa{
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid var(--title);
+    margin: 40px 5px 0;
+    color: var(--title);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 1s;
+}
+.contact .social-links .fa:hover{
+    background-color: var(--title);
+    color: #fff;
+    transform: translateX(-7px);
+}
+
+@media screen and (max-width: 760px) {
+    .header .nav{
+        position: relative;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+    .header .nav a {
+        display: block;
+        margin: 2rem;
+        color: black;
+    }
+    .header .nav .nav__link:hover::after {
+        width: 65%;
+        background-color: black;
+    }
+    .active::after{
+        width: 65%;
+        background-color: black;
+    }
+    .nav_menu {
+        position: fixed;
+        top: 8rem;
+        right: -100%; /* right:0; its render the nav bar but when its right:-100 */
+        width: 30%;
+        height: 100%;
+        padding: 2rem;
+        background-color:var(--pink);
+        transition: 1s;
+    }
+    .header .nav .nav_toggle{
+        display: block;
+        color: black;
+        font-size: 1.5rem;
+        cursor: pointer;
+        float: right;
+    }
+    .show {
+        right: 0;
+    }
+    .home .slide{
+        background-image: url(../images/back2.png);
+    }
+    .home .slide .beautytxt {
+        padding-top: 0;       
+        margin-bottom: 0;
+        text-align: center;
+        float: none;
+        padding-top: 30rem;
+    }
+    .home .slide .beautytxt h1 {
+        font-size: 300%;
+    }
+    .home .slide .beautytxt p {
+        font-size: 250%;
+        width: 380px;
+        color: rgb(236, 38, 71);
+    }
+    .about .about-section{
+        flex-wrap: wrap;
+    }
+    .about .about-section .about-img img {
+        width: 120%;
+        margin-left: 2rem;
+    }
+    .about .about-section {
+        margin-left: 6rem;
+    }
+    .about .about-section .about-txt {
+        font-size: 15px;
+        padding-top: 20px;  
+        text-align: center; 
+    }
+    .content-title1{
+        font-size: 33px;
+    }
+    .ptext{
+        font-size: 17px;
+    }
+    .services .services-images{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .services .services-images .service-image{
+     /* flex: 1 1 30%; */
+    }
+    .services .services-images .service-image img {
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+    }
+    .gallery .gallery-images{
+        display: flex;
+        /* flex: 1 1 100%; */
+        flex-direction: column;
+    }
+    .gallery .gallery-images .gallery-img {
+        flex: 1 1 10%;
+    }
+    .contact .opening-left, .opening-right{
+        flex-basis: 100%;
+        font-size: 13px;
+    }
+    .contact .opening-row h2 {
+        margin: 8px;
+        font-size: 18px;
+    }
+    .contact .opening-row p {
+        line-height: 1.6;
+        font-size: 15px;
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    .home .slide .beautytxt p {
+        font-size: 150%;
+        width:300px;
+    }
+}
